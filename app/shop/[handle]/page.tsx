@@ -1,5 +1,5 @@
 // /app/shop/handle/page.tsx
-("use client");
+"use client";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { FiShoppingBag, FiHeart, FiX } from "react-icons/fi";
