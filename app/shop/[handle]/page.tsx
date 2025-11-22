@@ -29,7 +29,7 @@ export default function ProductDetailPage() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/api/products/[handle]/${handle}`);
+        const res = await fetch(`/api/products/${handle}`);
         if (!res.ok) throw new Error("Failed to fetch product");
         const data = await res.json();
         if (!cancelled) setProduct(data);
