@@ -1,4 +1,4 @@
-// /app/shop/handle/page.tsx
+// /app/shop/[handle]/page.tsx
 "use client";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";

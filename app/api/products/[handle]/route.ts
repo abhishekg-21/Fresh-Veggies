@@ -1,3 +1,4 @@
+//app/api/products/[handle]/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
 
