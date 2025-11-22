@@ -1,5 +1,4 @@
-// /app/api/products/[handle]/route.ts
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
 
 const pool = new Pool({
@@ -7,14 +6,16 @@ const pool = new Pool({
 });
 
 export async function GET(
-  _request: Request,
-  { params }: { params: { handle: string } }
+  req: NextRequest,
+  context: { params: Promise<{ handle: string }> }
 ) {
   try {
+    const { handle } = await context.params; // MUST await
+
     const client = await pool.connect();
     const result = await client.query(
       "SELECT * FROM products_raw WHERE handle = $1 LIMIT 1;",
-      [params.handle]
+      [handle]
     );
     client.release();
 
