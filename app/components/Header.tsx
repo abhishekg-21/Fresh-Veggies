@@ -16,15 +16,19 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import shop from "../shop/page";
-import cart from "../cart/page";
+import { useCart } from "../context/CartContext"; // 👈 Add these
+import { useWishlist } from "../context/WishlistContext"; // 👈 Add these
+
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [cartCount, setCartCount] = useState(3);
-  const [wishlistCount, setWishlistCount] = useState(5);
-  const pathname = usePathname(); // Use usePathname instead of useRouter
+
+  // 👈 Replace hardcoded counts with real context data
+  const { cart } = useCart();
+  const { wishlist } = useWishlist();
+
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -35,21 +39,25 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 👈 Real counts from context
+  const cartCount = cart.length;
+  const wishlistCount = wishlist.length;
+
   const navItems = [
     { name: "Home", href: "/" },
     {
       name: "Shop",
       href: "/shop",
       submenu: [
-        { name: "Fresh Vegetables", href: "./shop" },
+        { name: "Fresh Vegetables", href: "/shop" },
         { name: "Organic Fruits", href: "/shop?category=fruits" },
         { name: "Leafy Greens", href: "/shop?category=greens" },
         { name: "Seasonal Produce", href: "/shop?category=seasonal" },
       ],
     },
-    { name: "About", href: "./about" },
+    { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "./contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -189,9 +197,9 @@ const Header: React.FC = () => {
                 )}
               </div>
 
-              {/* Wishlist */}
+              {/* Wishlist - 👈 Now uses real count */}
               <Link
-                href="./wishlist"
+                href="/wishlist"
                 className={`relative p-2 rounded-full transition ${
                   scrolled
                     ? "hover:bg-gray-100 text-gray-700"
@@ -206,9 +214,9 @@ const Header: React.FC = () => {
                 )}
               </Link>
 
-              {/* Cart */}
+              {/* Cart - 👈 Now uses real count */}
               <Link
-                href="./cart"
+                href="/cart"
                 className={`relative p-2 rounded-full transition ${
                   scrolled
                     ? "hover:bg-gray-100 text-gray-700"
@@ -225,7 +233,7 @@ const Header: React.FC = () => {
 
               {/* User Account */}
               <Link
-                href="./account"
+                href="/account"
                 className={`hidden sm:flex p-2 rounded-full transition ${
                   scrolled
                     ? "hover:bg-gray-100 text-gray-700"
