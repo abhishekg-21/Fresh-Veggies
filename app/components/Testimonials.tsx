@@ -1,6 +1,7 @@
 // components/Testimonials.tsx
 import React from "react";
 import { FiStar } from "react-icons/fi";
+import Image from "next/image";
 
 interface Testimonial {
   id: number;
@@ -118,9 +119,11 @@ const Testimonials: React.FC = () => {
 
               {/* Customer Info */}
               <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
-                <img
+                <Image
                   src={testimonial.img}
                   alt={testimonial.name}
+                  width={800}
+                  height={400}
                   className="w-14 h-14 rounded-full object-cover border-2 border-green-200"
                 />
                 <div className="flex-1">

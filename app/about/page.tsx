@@ -1,5 +1,6 @@
 "use client";
-
+import Image from "next/image";
+import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
@@ -204,26 +205,33 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-14 items-center">
             {/* Photo collage */}
             <div className="relative flex flex-col gap-4">
-              <div className="flex gap-4">
-                <img
-                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80"
-                  alt="Fresh Vegetables"
-                  className="rounded-3xl shadow-2xl w-2/3 h-64 object-cover border-4 border-white"
-                  style={{ zIndex: 2 }}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1592921870789-04563d55041c?auto=format&fit=crop&w=400&q=80"
-                  alt="Farmer"
-                  className="rounded-2xl shadow-xl w-1/3 h-44 object-cover border-2 border-yellow-200 -translate-y-8"
-                  style={{ zIndex: 1 }}
-                />
-              </div>
-              <img
+              <Image
+                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80"
+                alt="Fresh Vegetables"
+                width={800}
+                height={400}
+                className="rounded-3xl shadow-2xl w-2/3 h-64 object-cover border-4 border-white"
+                style={{ zIndex: 2 }}
+              />
+
+              <Image
+                src="https://images.unsplash.com/photo-1592921870789-04563d55041c?auto=format&fit=crop&w=400&q=80"
+                alt="Farmer"
+                width={400}
+                height={300}
+                className="rounded-2xl shadow-xl w-1/3 h-44 object-cover border-2 border-yellow-200 -translate-y-8"
+                style={{ zIndex: 1 }}
+              />
+
+              <Image
                 src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=400&q=80"
                 alt="Organic Farm"
+                width={400}
+                height={250}
                 className="rounded-2xl shadow-xl w-1/2 h-36 object-cover border-2 border-green-200 translate-x-1/2 -translate-y-4"
                 style={{ zIndex: 0 }}
               />
+
               <div className="absolute left-0 -top-7 bg-yellow-400 text-green-900 px-5 py-2 font-bold text-sm uppercase rounded-full shadow animate-bounce ring-2 ring-yellow-200 ring-offset-2 z-20">
                 Est. 2010
               </div>
@@ -353,9 +361,11 @@ export default function AboutPage() {
                 className="bg-white rounded-3xl shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden"
               >
                 <div className="relative overflow-hidden h-64 bg-gray-100 rounded-t-3xl">
-                  <img
+                  <Image
                     src={member.img}
                     alt={member.name}
+                    width={800}
+                    height={400}
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
                   />
                 </div>
@@ -387,7 +397,7 @@ export default function AboutPage() {
             Join thousands of satisfied customers who trust{" "}
             <strong>Organo</strong> for their daily fresh produce.
           </p>
-          <a
+          <Link
             href="/shop"
             className="inline-flex items-center gap-4 bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold px-10 py-4 rounded-xl shadow-xl transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-300"
             aria-label="Start Shopping Now"
@@ -408,7 +418,7 @@ export default function AboutPage() {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </section>
 

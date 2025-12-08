@@ -1,6 +1,7 @@
 // components/OurTeam.tsx
 import React from "react";
 import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from "react-icons/fi";
+import Image from "next/image";
 
 interface TeamMember {
   id: number;
@@ -99,9 +100,11 @@ const OurTeam: React.FC = () => {
             >
               {/* Image Container */}
               <div className="relative overflow-hidden h-64 bg-gray-100">
-                <img
+                <Image
                   src={member.img}
                   alt={member.name}
+                  width={800}
+                  height={400}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Overlay on Hover */}

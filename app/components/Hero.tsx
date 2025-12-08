@@ -1,5 +1,6 @@
 // components/HeroBanner.tsx
 import React from "react";
+import Image from "next/image";
 
 const HeroBanner: React.FC = () => {
   return (
@@ -29,9 +30,11 @@ const HeroBanner: React.FC = () => {
       </div>
 
       {/* Decorative Leaf */}
-      <img
+      <Image
         src="/images/hero banner/Hero_banner_image.webp"
-        alt=""
+        alt="Decorative leaf"
+        width={64}
+        height={64}
         className="absolute bottom-8 left-8 w-16 h-16 opacity-40 hidden md:block"
       />
     </section>

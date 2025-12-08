@@ -1,5 +1,7 @@
 // /app/shop/page.tsx
 "use client";
+import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "../components/Header";
@@ -11,7 +13,7 @@ interface Product {
   name: string;
   body: string;
   variantFulfillmentServices: number;
-  originalPrice?: number;
+  originalPrice: number;
   rating: number;
   img: string;
   badge?: string;
@@ -23,7 +25,7 @@ export default function ShopPage() {
   const [sortBy, setSortBy] = useState("featured");
   const [products, setProducts] = useState<Product[]>([]);
   const [priceRange, setPriceRange] = useState(100);
-
+  const { addToWishlist, wishlist } = useWishlist();
   const categories = [
     "All",
     "Vegetables",
@@ -32,6 +34,7 @@ export default function ShopPage() {
     "Organic",
     "Seasonal",
   ];
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetch("/api/products")
@@ -197,7 +200,7 @@ export default function ShopPage() {
               {filteredProducts.map((product) => (
                 <Link
                   key={product.handle}
-                  href={`/shop/handle`}
+                  href={`/shop/${product.handle}`}
                   className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden relative block"
                   tabIndex={0}
                   aria-label={`${product.name}, price $${product.variantFulfillmentServices}`}
@@ -223,12 +226,44 @@ export default function ShopPage() {
                       <button
                         className="bg-green-100 text-green-600 hover:bg-green-600 hover:text-white p-3 rounded-full transition cursor-pointer"
                         aria-label={`Add ${product.name} to Cart`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          addToCart({
+                            handle: product.handle,
+                            name: product.name,
+                            price: product.variantFulfillmentServices,
+                            originalPrice: product.originalPrice,
+                            img: product.img,
+                            category: product.productCategory,
+                            rating: product.rating,
+                          });
+                          // Optionally show a notification!
+                        }}
                       >
                         <FiShoppingCart className="text-xl" />
                       </button>
                       <button
-                        className="bg-green-100 text-green-600 hover:bg-green-600 hover:text-white p-3 rounded-full transition cursor-pointer"
+                        className={`bg-green-100 text-green-600 hover:bg-green-600 hover:text-white p-3 rounded-full transition cursor-pointer ${
+                          wishlist.find(
+                            (item) => item.handle === product.handle
+                          )
+                            ? "bg-red-200 text-red-600"
+                            : ""
+                        }`}
                         aria-label={`Add ${product.name} to Wishlist`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToWishlist({
+                            handle: product.handle,
+                            name: product.name,
+                            price: product.variantFulfillmentServices,
+                            originalPrice: product.originalPrice,
+                            img: product.img,
+                            category: product.productCategory,
+                            rating: product.rating,
+                          });
+                        }}
                       >
                         <FiHeart className="text-xl" />
                       </button>

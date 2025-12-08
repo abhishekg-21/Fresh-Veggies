@@ -1,6 +1,7 @@
 // components/BlogPreview.tsx
 import React from "react";
-import { FiClock, FiUser, FiArrowRight, FiTag } from "react-icons/fi";
+import { FiClock, FiArrowRight, FiTag } from "react-icons/fi";
+import Image from "next/image";
 
 interface BlogPost {
   id: number;
@@ -91,9 +92,11 @@ const BlogPreview: React.FC = () => {
             >
               {/* Image Container */}
               <div className="relative h-56 overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={post.img}
                   alt={post.title}
+                  width={800}
+                  height={400}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Category Badge */}
@@ -139,9 +142,11 @@ const BlogPreview: React.FC = () => {
                 {/* Author & Read More */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-2">
-                    <img
+                    <Image
                       src={post.authorImg}
                       alt={post.author}
+                      width={800}
+                      height={400}
                       className="w-8 h-8 rounded-full object-cover"
                     />
                     <span className="text-sm text-gray-700 font-medium">

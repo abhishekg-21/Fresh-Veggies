@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WishlistProvider } from "./context/WishlistContext";
+import { CartProvider } from "./context/CartContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,15 +21,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html>
+      <body>
+        <WishlistProvider>
+          <CartProvider>{children} </CartProvider>
+        </WishlistProvider>
       </body>
     </html>
   );

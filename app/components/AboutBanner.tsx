@@ -1,6 +1,7 @@
 // components/AboutBanner.tsx
 import React from "react";
 import { FiCheckCircle } from "react-icons/fi";
+import Image from "next/image";
 
 const AboutBanner: React.FC = () => {
   const features = [
@@ -30,21 +31,27 @@ const AboutBanner: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               {/* Main Large Image */}
               <div className="col-span-2">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80"
                   alt="Fresh Vegetables"
+                  width={800}
+                  height={400}
                   className="rounded-2xl shadow-2xl w-full h-64 object-cover"
                 />
               </div>
               {/* Two Smaller Images */}
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1592921870789-04563d55041c?auto=format&fit=crop&w=400&q=80"
                 alt="Farmer"
+                width={800}
+                height={400}
                 className="rounded-xl shadow-lg h-48 object-cover"
               />
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=400&q=80"
                 alt="Organic Farm"
+                width={800}
+                height={400}
                 className="rounded-xl shadow-lg h-48 object-cover"
               />
             </div>
