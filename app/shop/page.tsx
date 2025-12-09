@@ -237,6 +237,8 @@ export default function ShopPage() {
                             img: product.img,
                             category: product.productCategory,
                             rating: product.rating,
+                            inStock: true, // 👈 Add these
+                            maxQuantity: 10, // 👈 Add these
                           });
                           // Optionally show a notification!
                         }}

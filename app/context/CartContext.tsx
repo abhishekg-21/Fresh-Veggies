@@ -8,6 +8,7 @@ export interface CartProduct {
   quantity: number; // 👈 needed for CartPage
   img: string;
   originalPrice: number;
+  rating?: number;
   category: string;
   inStock: boolean;
   maxQuantity: number;
