@@ -339,7 +339,18 @@ function ProcessSection() {
   );
 }
 
-function QuoteFormSection({ formData, onInputChange }: any) {
+interface QuoteFormProps {
+  formData: {
+    name: string;
+    business: string;
+    phone: string;
+    quantity: string;
+    deliveryDate: string;
+  };
+  onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+}
+
+function QuoteFormSection({ formData, onInputChange }: QuoteFormProps) {
   return (
     <motion.section
       initial={{ y: 30, opacity: 0 }}

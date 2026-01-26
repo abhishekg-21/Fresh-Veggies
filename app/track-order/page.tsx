@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
 
+interface OrderItem {
+  id: string;
+  name: string;
+  quantity: number;
+  price: number;
+}
+
 interface Order {
   orderId: string;
   status: string;
@@ -8,7 +15,7 @@ interface Order {
   date: string;
   trackingUrl?: string;
   eta?: string;
-  items: any[];
+  items: OrderItem[];
 }
 
 export default function TrackOrderPage() {
@@ -110,7 +117,7 @@ export default function TrackOrderPage() {
             <div className="pt-6 border-t">
               <h3 className="font-semibold mb-3">Items (₹{order.total})</h3>
               <ul className="space-y-2">
-                {order.items.map((item: any) => (
+                {order.items.map((item: OrderItem) => (
                   <li key={item.id} className="flex justify-between text-sm">
                     <span>
                       {item.name} x{item.quantity}

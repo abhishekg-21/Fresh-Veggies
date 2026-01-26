@@ -336,7 +336,18 @@ function ProcessSection() {
   );
 }
 
-function JoinFormSection({ formData, onInputChange }: any) {
+interface JoinFormSectionProps {
+  formData: {
+    name: string;
+    farmName: string;
+    phone: string;
+    location: string;
+    crops: string;
+  };
+  onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+}
+
+function JoinFormSection({ formData, onInputChange }: JoinFormSectionProps) {
   return (
     <motion.section
       initial={{ y: 30, opacity: 0 }}

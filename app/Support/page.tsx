@@ -275,7 +275,25 @@ function QuickHelpSection({ options }: { options: SupportOption[] }) {
 }
 
 // Simplified form matching shipping PIN style
-function ContactFormSection({ formData, onInputChange }: any) {
+interface ContactFormSectionProps {
+  formData: {
+    name: string;
+    email: string;
+    phone: string;
+    issue: string;
+    orderId: string;
+  };
+  onInputChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => void;
+}
+
+function ContactFormSection({
+  formData,
+  onInputChange,
+}: ContactFormSectionProps) {
   return (
     <motion.section
       initial={{ y: 30, opacity: 0 }}

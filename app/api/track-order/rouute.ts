@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "./lib/db"; // Your NeonDB/PostgreSQL setup
+import { db } from "@/lib/db"; // Your NeonDB/PostgreSQL setup
 import { orders } from "@/lib/schema"; // Your schema
 
 export async function POST(request: NextRequest) {
@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     if (!orderId || !email) {
       return NextResponse.json(
         { error: "Missing order ID or email" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 

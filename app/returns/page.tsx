@@ -45,7 +45,7 @@ export default function ReturnsPolicy() {
       <div className="max-w-6xl mx-auto px-4 pb-20 space-y-20">
         {/* Sticky Navigation */}
         <motion.div
-          className="sticky top-24 z-20 bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-1 mx-auto max-w-2xl"
+          className="sticky top-24 bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-1 mx-auto max-w-2xl"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
@@ -68,7 +68,7 @@ export default function ReturnsPolicy() {
                   {activeSection === tab.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-600 rounded-2xl -z-10"
+                      className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-600 rounded-2xl "
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -194,7 +194,7 @@ export default function ReturnsPolicy() {
                       🔄 5-Minute Return Process
                     </h2>
                     <p className="text-xl text-gray-500">
-                      From complaint to credit, here's exactly what happens
+                      From complaint to credit, here&apos;s exactly what happens
                     </p>
                   </div>
                 </div>
@@ -376,8 +376,8 @@ export default function ReturnsPolicy() {
         >
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">
             Complies with <strong>Consumer Protection Act 2019</strong>. We
-            reserve the right to refuse returns that don't meet our freshness
-            standards.
+            reserve the right to refuse returns that don&apos;t meet our
+            freshness standards.
           </p>
           <div className="text-2xl font-bold text-gray-500">
             Last updated: January 2026
