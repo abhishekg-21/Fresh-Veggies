@@ -4,6 +4,8 @@ import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { FiShoppingCart, FiHeart, FiEye, FiFilter } from "react-icons/fi";
@@ -82,14 +84,14 @@ export default function ShopPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       {/* Page Header */}
       <div className="relative bg-gradient-to-r from-green-700 via-green-800 to-green-600 text-white py-20 shadow-lg overflow-hidden">
         <div className="absolute top-0 left-0 w-72 h-72 bg-green-900 opacity-20 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute -bottom-24 right-0 w-96 h-96 bg-yellow-400 opacity-10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-6 relative text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-lg mb-4 tracking-tight">
             Our <span className="text-yellow-300">Products</span>
           </h1>
@@ -305,7 +307,7 @@ export default function ShopPage() {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

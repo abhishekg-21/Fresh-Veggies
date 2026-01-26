@@ -61,7 +61,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 transition-all duration-300">
+    <header className="w-full sticky top-0 transition-all duration-300 z-1">
       {/* Top Bar */}
       <div className="bg-[#2C332D] text-gray-300 text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">

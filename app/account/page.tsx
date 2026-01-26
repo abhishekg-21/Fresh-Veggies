@@ -6,14 +6,14 @@ import { FiUser, FiShoppingBag, FiHeart, FiSettings } from "react-icons/fi";
 export default function AccountPage() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       {/* Enhanced Account Page Hero */}
       <section className="relative bg-gradient-to-tr from-green-700 via-green-800 to-green-600 text-white py-20 overflow-hidden shadow-md">
         {/* Decorative Circles */}
         <div className="absolute -top-10 -left-10 w-72 h-72 bg-green-900 opacity-15 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 -right-10 w-56 h-56 bg-green-300 opacity-10 rounded-full blur-2xl"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Main Heading */}
             <div className="text-center md:text-left flex-1">
@@ -225,7 +225,7 @@ export default function AccountPage() {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

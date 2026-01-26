@@ -13,27 +13,27 @@ import {
 
 const Footer: React.FC = () => {
   const quickLinks = [
-    { name: "About Us", href: "#" },
-    { name: "Shop", href: "#" },
-    { name: "Our Farmers", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About Us", href: "/about" },
+    { name: "Shop", href: "/shop" },
+    { name: "Our Farmers", href: "/our_farmer" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const customerService = [
-    { name: "Track Order", href: "#" },
-    { name: "Returns & Refunds", href: "#" },
-    { name: "Shipping Info", href: "#" },
-    { name: "FAQs", href: "#" },
-    { name: "Support", href: "#" },
+    { name: "Track Order", href: "/track-order" },
+    { name: "Returns & Refunds", href: "/returns" },
+    { name: "Shipping Info", href: "/shipping" },
+    { name: "FAQs", href: "/FAQs" },
+    { name: "Support", href: "/Support" },
   ];
 
   const categories = [
-    { name: "Fresh Vegetables", href: "#" },
-    { name: "Organic Fruits", href: "#" },
-    { name: "Leafy Greens", href: "#" },
-    { name: "Seasonal Produce", href: "#" },
-    { name: "Bulk Orders", href: "#" },
+    { name: "Fresh Vegetables", href: "/shop" },
+    { name: "Organic Fruits", href: "/shop?category=fruits" },
+    { name: "Leafy Greens", href: "/shop?category=greens" },
+    { name: "Seasonal Produce", href: "/shop?category=seasonal" },
+    { name: "Bulk Orders", href: "/bulk_order" },
   ];
 
   return (
@@ -73,34 +73,47 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Social Media */}
-            <div>
-              <h4 className="text-white font-semibold mb-3">Follow Us</h4>
-              <div className="flex gap-3">
-                <a
-                  href="#"
-                  className="bg-[#2C332D] hover:bg-green-600 p-3 rounded-lg transition-all"
-                >
-                  <FiFacebook className="text-lg" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-[#2C332D] hover:bg-green-600 p-3 rounded-lg transition-all"
-                >
-                  <FiTwitter className="text-lg" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-[#2C332D] hover:bg-green-600 p-3 rounded-lg transition-all"
-                >
-                  <FiInstagram className="text-lg" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-[#2C332D] hover:bg-green-600 p-3 rounded-lg transition-all"
-                >
-                  <FiLinkedin className="text-lg" />
-                </a>
-              </div>
+            <h4 className="text-white font-semibold mb-3">Follow Us</h4>
+            <div className="flex gap-3">
+              <a
+                href="https://www.facebook.com/yourorgano" // 👈 Your FB
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#2C332D] hover:bg-blue-600 p-3 rounded-xl transition-all hover:scale-110 hover:shadow-lg shadow-md"
+                aria-label="Facebook"
+              >
+                <FiFacebook className="text-lg group-hover:-rotate-12 transition-transform" />
+              </a>
+
+              <a
+                href="https://twitter.com/yourorgano" // 👈 Your Twitter/X
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#2C332D] hover:bg-sky-500 p-3 rounded-xl transition-all hover:scale-110 hover:shadow-lg shadow-md"
+                aria-label="Twitter"
+              >
+                <FiTwitter className="text-lg group-hover:-rotate-12 transition-transform" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/yourorgano/" // 👈 YOUR INSTAGRAM HERE!
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#2C332D] hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 p-3 rounded-xl transition-all hover:scale-110 hover:shadow-lg shadow-md"
+                aria-label="Instagram"
+              >
+                <FiInstagram className="text-lg group-hover:-rotate-12 transition-transform" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/yourorgano" // 👈 Your LinkedIn
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#2C332D] hover:bg-blue-700 p-3 rounded-xl transition-all hover:scale-110 hover:shadow-lg shadow-md"
+                aria-label="LinkedIn"
+              >
+                <FiLinkedin className="text-lg group-hover:-rotate-12 transition-transform" />
+              </a>
             </div>
           </div>
 

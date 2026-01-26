@@ -45,14 +45,14 @@ export default function ContactPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-green-700 via-green-800 to-green-600 text-white py-20 overflow-hidden shadow-lg">
         {/* Decorative accent circle */}
         <div className="absolute top-8 left-8 w-48 h-48 bg-yellow-300 opacity-20 rounded-full blur-3xl filter pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10 space-y-6">
+        <div className="max-w-7xl mx-auto px-6 text-center relative space-y-6">
           <h1 className="text-5xl font-extrabold tracking-tight drop-shadow-lg">
             Contact<span className="text-yellow-300"> Us</span>
           </h1>
@@ -423,7 +423,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

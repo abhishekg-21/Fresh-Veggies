@@ -15,10 +15,23 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn-icons-png.flaticon.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com", // 👈 ADD CLOUDINARY
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
+  experimental: {
+    turbopack: false,
+  },
 };
-
-module.exports = nextConfig;
 
 export default nextConfig;

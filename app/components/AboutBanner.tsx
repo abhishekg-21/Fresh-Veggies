@@ -24,7 +24,7 @@ const AboutBanner: React.FC = () => {
       <div className="absolute top-0 right-0 w-64 h-64 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-300 rounded-full opacity-10 blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Images */}
           <div className="relative">

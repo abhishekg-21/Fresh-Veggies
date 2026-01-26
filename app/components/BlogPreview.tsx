@@ -64,7 +64,7 @@ const BlogPreview: React.FC = () => {
       {/* Decorative Background */}
       <div className="absolute top-20 right-0 w-72 h-72 bg-green-100 rounded-full opacity-30 blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative ">
         {/* Section Header */}
         <div className="flex justify-between items-end mb-12">
           <div>

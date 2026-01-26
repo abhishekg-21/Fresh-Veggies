@@ -127,7 +127,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-green-700 via-green-800 to-green-600 text-white py-24 overflow-hidden shadow-lg">
@@ -135,7 +135,7 @@ export default function BlogPage() {
         <div className="absolute left-6 top-6 w-36 h-36 bg-yellow-400 opacity-20 rounded-full blur-3xl filter animate-pulse"></div>
         <div className="absolute right-10 bottom-10 w-52 h-52 bg-green-900 opacity-10 rounded-full blur-3xl"></div>
 
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-10 relative z-20">
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-10 relative">
           <h1 className="text-6xl font-extrabold drop-shadow-lg tracking-tight leading-tight">
             Our <span className="text-yellow-300">Blog</span>
           </h1>
@@ -404,7 +404,7 @@ export default function BlogPage() {
         <div className="pointer-events-none absolute -top-16 right-10 w-48 h-48 bg-yellow-300 opacity-30 rounded-full blur-3xl"></div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

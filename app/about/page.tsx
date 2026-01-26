@@ -130,7 +130,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-green-700 via-green-800 to-green-600 text-white py-32 md:py-40 overflow-hidden shadow-lg">
@@ -144,7 +144,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-6 text-center relative">
           {/* Brand Icon or Illustration */}
           <div className="mb-8 flex justify-center">
             <svg
@@ -211,7 +211,7 @@ export default function AboutPage() {
                 width={800}
                 height={400}
                 className="rounded-3xl shadow-2xl w-2/3 h-64 object-cover border-4 border-white"
-                style={{ zIndex: 2 }}
+                style={{ zIndex: 0 }}
               />
 
               <Image
@@ -219,8 +219,8 @@ export default function AboutPage() {
                 alt="Farmer"
                 width={400}
                 height={300}
-                className="rounded-2xl shadow-xl w-1/3 h-44 object-cover border-2 border-yellow-200 -translate-y-8"
-                style={{ zIndex: 1 }}
+                className="rounded-2xl shadow-xl w-1/3 h-44 object-cover border-2 border-yellow-200 -translate-y-4"
+                style={{ zIndex: 0 }}
               />
 
               <Image
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 style={{ zIndex: 0 }}
               />
 
-              <div className="absolute left-0 -top-7 bg-yellow-400 text-green-900 px-5 py-2 font-bold text-sm uppercase rounded-full shadow animate-bounce ring-2 ring-yellow-200 ring-offset-2 z-20">
+              <div className="absolute left-0 -top-7 bg-yellow-400 text-green-900 px-5 py-2 font-bold text-sm uppercase rounded-full shadow animate-bounce ring-2 ring-yellow-200 ring-offset-2 z-0">
                 Est. 2010
               </div>
             </div>
@@ -422,7 +422,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

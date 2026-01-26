@@ -7,7 +7,7 @@ export interface CartProduct {
   price: number;
   quantity: number; // 👈 needed for CartPage
   img: string;
-  originalPrice: number;
+  originalPrice?: number;
   rating?: number;
   category: string;
   inStock: boolean;

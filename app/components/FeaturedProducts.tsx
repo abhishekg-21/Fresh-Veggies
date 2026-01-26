@@ -132,7 +132,7 @@ const FeaturedProducts: React.FC = () => {
               {/* Badge */}
               {product.badge && (
                 <div
-                  className={`absolute top-3 left-3 z-10 px-3 py-1 rounded-full text-xs font-bold text-white ${
+                  className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold text-white ${
                     product.badge === "Sale"
                       ? "bg-red-500"
                       : product.badge === "Best Seller"
